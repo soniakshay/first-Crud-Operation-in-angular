@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Edit Form</h2>
+  <form >
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name1" [(ngModel)]="obj.name">
+      {{obj.name}}
+    </div>
+    <div class="form-group">
+      <label for="email">email:</label>
+      <input type="text" class="form-control" id="email"  name="email1"  [(ngModel)]="obj.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="text" class="form-control" id="pwd"  name="pwd1" [(ngModel)]="obj.password">
+    </div>
+    <button type="submit" class="btn btn-default" (click)="updateRecord()"  >Submit</button>
+  </form>
+</div>
