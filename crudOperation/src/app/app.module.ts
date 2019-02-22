@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsereditformComponent } from './usereditform/usereditform.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UsereditformComponent
+    UsereditformComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

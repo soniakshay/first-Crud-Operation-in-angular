@@ -2,6 +2,26 @@
 var express=require('express');
 var router=express.Router();
 
+router.get('/checkuserloginornot', function(req,res){
+
+    if(req.session.isLoggedIn == 'Y')
+    {
+       var obj = { };
+       obj.status="login";
+       console.log(obj);
+ 
+       res.send(obj);
+       
+    }
+    else{
+       var obj = { };
+       obj.status="logout";
+       console.log(obj);
+       
+       res.send(obj);
+       
+    }
+ })
 
 router.get('/',function(req,res){
     Users.find({},function(err,users){
@@ -111,5 +131,5 @@ router.put('/:userid',function(req,res){
 
 
 
-router
+
 module.exports=router;

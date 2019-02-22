@@ -14,13 +14,14 @@ import { stringify } from '@angular/core/src/render3/util';
 })
 export class UsereditformComponent implements OnInit {
     obj: Users;
+    insertval: Users = { name: '', email: '', password: '' , _id: '' };
 
 
-  constructor(private usersService: UsersService,  private route: ActivatedRoute,private location: Location,private router: Router) { }
+  constructor(private usersService: UsersService,  private route: ActivatedRoute,private location: Location,private router: Router) {}
 
   ngOnInit() {
-    this.getRecord();
 
+    this.getRecord();
   }
   getRecord(): void {
 
@@ -40,5 +41,13 @@ export class UsereditformComponent implements OnInit {
     });
 
   }
+  insertRecord(): void {
+    this.usersService.insertdata(this.insertval).subscribe(() => {
+      console.log('Insert Data SuccessFully');
+      this.router.navigate(['./viewuser']);
+  });
+
+  }
+
 
 }
